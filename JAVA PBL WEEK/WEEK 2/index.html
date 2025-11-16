@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Calculator</title>
+</head>
+<body>
+
+<h3>Simple Calculator</h3>
+
+<input type="number" id="num1" placeholder="First Number">
+<input type="number" id="num2" placeholder="Second Number">
+
+<select id="op">
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">*</option>
+  <option value="/">/</option>
+</select>
+
+<button onclick="calc()">=</button>
+
+<p id="result"></p>
+
+<script>
+function calc() {
+  let a = parseFloat(document.getElementById("num1").value);
+  let b = parseFloat(document.getElementById("num2").value);
+  let op = document.getElementById("op").value;
+  document.getElementById("result").innerText = "Result: " + eval(a + op + b);
+}
+</script>
+
+</body>
+</html>

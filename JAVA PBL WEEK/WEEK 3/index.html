@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Number Guessing Game</h3>
+
+<input id="guess" type="number" placeholder="Enter a number 1-10">
+<button onclick="check()">Guess</button>
+
+<p id="msg"></p>
+
+<script>
+let num = Math.floor(Math.random() * 10) + 1;
+
+function check() {
+  let g = document.getElementById("guess").value;
+  if (g == num) {
+    document.getElementById("msg").innerText = "🎉 Correct!";
+  } else {
+    document.getElementById("msg").innerText = "❌ Wrong! Try again.";
+  }
+}
+</script>
+
+</body>
+</html>

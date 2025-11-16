@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Product Card</title>
+  <style>
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: #f4f4f4;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: row;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  max-width: 700px;
+  width: 90%;
+}
+
+.product-image img {
+  width: 300px;
+  object-fit: cover;
+}
+
+.product-details {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.product-title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.product-description {
+  color: #555;
+  margin: 10px 0;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.add-to-cart {
+  padding: 10px;
+  border: none;
+  background: #28a745;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.add-to-cart:hover {
+  background: #218838;
+}
+
+@media (max-width: 600px) {
+  .product-card {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-image img {
+    width: 100%;
+  }
+
+  .product-details {
+    text-align: center;
+  }
+}
+
+  </style>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Product Card</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="product-card">
+    <div class="product-image">
+      <img src="https://via.placeholder.com/300" alt="Product">
+    </div>
+    <div class="product-details">
+      <h2 class="product-title">Cool Product</h2>
+      <p class="product-description">
+        Sweater
+      </p>
+      <div class="product-price">$49.99</div>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+  </div>
+
+</body>
+<script>
+const button = document.querySelector('.add-to-cart');
+
+button.addEventListener('click', () => {
+  button.textContent = 'Added!';
+  button.disabled = true;
+  button.style.background = '#6c757d'; 
+});
+
+</script>
+</html>
+
+</body>
+</html>

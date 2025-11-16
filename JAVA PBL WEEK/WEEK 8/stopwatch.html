@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.stopwatch-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#display {
+  font-size: 40px;
+  background: #111;
+  color: #0ff;
+  padding: 10px 25px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+<div class="stopwatch-container">
+  <h2>Stopwatch</h2>
+  <div id="display">00:00:00</div>
+
+  <button onclick="startWatch()">Start</button>
+  <button onclick="stopWatch()">Stop</button>
+  <button onclick="resetWatch()">Reset</button>
+</div>
+
+<script>
+let ms = 0, sec = 0, min = 0;
+let interval;
+
+function startWatch() {
+  if (!interval) {  
+    interval = setInterval(runWatch, 10); // runs every 10ms
+  }
+}
+
+function runWatch() {
+  ms++;
+  if (ms === 100) { 
+    ms = 0;
+    sec++;
+  }
+  if (sec === 60) {
+    sec = 0;
+    min++;
+  }
+
+  document.getElementById("display").innerText =
+    `${String(min).padStart(2, '0')}:` +
+    `${String(sec).padStart(2, '0')}:` +
+    `${String(ms).padStart(2, '0')}`;
+}
+
+function stopWatch() {
+  clearInterval(interval);
+  interval = null;
+}
+
+function resetWatch() {
+  clearInterval(interval);
+  interval = null;
+  ms = sec = min = 0;
+
+  document.getElementById("display").innerText = "00:00:00";
+}
+
+</script>
+
+</body>
+</html>

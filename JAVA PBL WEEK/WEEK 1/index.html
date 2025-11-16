@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f7f7;
+            text-align: center;
+        }
+        header {
+            background: #333;
+            color: white;
+            padding: 20px 0;
+        }
+        #about, #projects {
+            padding: 40px;
+        }
+        .project {
+            background: white;
+            margin: 10px auto;
+            padding: 20px;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: #333;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 id="name">My Portfolio</h1>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I am a Web Developer learning JavaScript.</p>
+        <button onclick="changeName()">Change Name</button>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="project">Project 1: Portfolio Website</div>
+        <div class="project">Project 2: Simple Calculator</div>
+        <div class="project">Project 3: To-Do App</div>
+    </section>
+
+    <script>
+        function changeName() {
+            let newName = prompt("Enter your name:");
+            if (newName) {
+                document.getElementById("name").innerText = newName + "'s Portfolio";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Celsius to Fahrenheit</h3>
+
+<input id="c" type="number" placeholder="Enter °C">
+<button onclick="convert()">Convert</button>
+
+<p id="result"></p>
+
+<script>
+function convert() {
+  let c = document.getElementById("c").value;
+  let f = (c * 9/5) + 32;
+  document.getElementById("result").innerText = c + "°C = " + f + "°F";
+}
+</script>
+
+</body>
+</html>
+
